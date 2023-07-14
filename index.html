@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote Generator (Normal Task)</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: rgb(223, 223, 223);
+            
+        }
+        
+        h1 {
+            margin-top: 20px;
+            color: #ffffff;
+        }
+        .container{
+            max-width: 90%;
+            width: 800px;
+            margin: auto;
+            background-color:  #232526 ;
+            box-shadow: rgba(0, 0, 0,) 0.;
+            transition:.3s ease all;
+            border-width: 7px;
+            border-style: solid;
+            border-image: linear-gradient(to right, #fa709a, #fee140) 1;
+            padding: 20px;
+            margin-top: 230px;
+
+        }
+        
+        .quote {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+        
+        .author {
+            margin-top: 10px;
+            font-size: 18px;
+            padding: 5px;
+            opacity:.8;
+            text-align: right;
+            color: #ffffff;
+        }
+        
+        #new-quote {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: linear-gradient(to right, #fa709a,#fee140);
+            /* background-color: Linear-gradient - #fa709a to ; */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quote Generator</h1>
+        <div class="quote-container">
+            <div class="quote" id="quote"></div>
+            <div class="author" id="author"></div>
+            <button id="new-quote">New Quote</button>
+        </div>
+    </div>
+    
+    <script>
+        // Array of quotes
+        var quotes = [
+            {
+                quote: "“The only way to do great work is to love what you do.”",
+                author: "Steve Jobs"
+            },
+            {
+                quote: "“Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.”",
+                author: "Albert Schweitzer"
+            },
+            {
+                quote: "“The future belongs to those who believe in the beauty of their dreams.”",
+                author: "Eleanor Roosevelt"
+            },
+            {
+                quote: "“The best way to predict the future is to create it.”",
+                author: "Peter Drucker"
+            },
+            {
+                quote: "“Believe you can and you're halfway there.”",
+                author: "Theodore Roosevelt"
+            },
+            {
+                quote: "“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”",
+                author: "Marilyn Monroe"
+            },
+            {
+                quote: "“Don't cry because it's over, smile because it happened.”",
+                name: "Dr. Seuss"
+            }, 
+            {
+                quote: "“Be yourself; everyone else is already taken.”",
+                name: "Oscar Wilde"
+            }, 
+            {
+                quote: "“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”",
+                name: "Albert Einstein"
+            }, 
+            {
+                quote: "“Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.”",
+                name: " Bernard M. Baruch"
+            }, 
+            {
+                quote: "“You know you're in love when you can't fall asleep because reality is finally better than your dreams.”",
+                name: "Dr. Seuss"
+            }, 
+            {
+                quote: "“A room without books is like a body without a soul.”",
+                name: "Marcus Tullius Cicero"
+            }, 
+            {
+                quote: "“So many books, so little time.”",
+                name: "Frank Zappa"
+            }, 
+            {
+                quote: "“You only live once, but if you do it right, once is enough.”",
+                name: "Mae West"
+            }, 
+            {
+                quote: "“Be the change that you wish to see in the world.”",
+                name: "Mahatma Gandhi"
+            },
+        ];
+        
+        // Function to generate a random quote
+        function generateQuote() {
+            var randomNumber = Math.floor(Math.random() * quotes.length);
+            var quoteElement = document.getElementById("quote");
+            var authorElement = document.getElementById("author");
+            
+            quoteElement.innerHTML = quotes[randomNumber].quote;
+            authorElement.innerHTML = "- " + quotes[randomNumber].author;
+        }
+        
+        // Event listener for the "New Quote" button
+        document.getElementById("new-quote").addEventListener("click", generateQuote);
+        
+        // Generate a random quote on page load
+        generateQuote();
+    </script>
+</body>
+</html>
